@@ -1,0 +1,16 @@
+[
+  {
+    "id": "dcf",
+    "title": "Discounted Cash-Flow Model",
+    "text": "You are a valuation analyst... (full prompt later)",
+    "logic": "Explains cash-flow projection → discount rate → terminal value.",
+    "categories": ["valuation", "reporting"]
+  },
+  {
+    "id": "var",
+    "title": "Value-at-Risk Assessment",
+    "text": "You are a risk manager... (full prompt later)",
+    "logic": "Uses historical simulation to estimate 99 % one-day VaR.",
+    "categories": ["risk"]
+  }
+]
