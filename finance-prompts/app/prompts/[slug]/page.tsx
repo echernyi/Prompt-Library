@@ -6,11 +6,12 @@ export async function generateStaticParams() {
   return getAllCategories().map((c) => ({ slug: c }));
 }
 
-export default function CategoryPage({
-  params: { slug }
+export default async function CategoryPage({
+  params
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const prompts = getPromptsByCategory(slug);
   if (!prompts.length) return notFound();
 
