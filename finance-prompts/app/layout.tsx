@@ -13,8 +13,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ru" className={inter.className}>
-      <body className="min-h-screen flex flex-col bg-white text-black antialiased">
-        <header className="border-b px-4 py-3">
+      <body className="min-h-screen flex flex-col text-black antialiased bg-gradient-to-br from-accent/10 via-white to-white before:pointer-events-none before:fixed before:inset-0 before:bg-[url('/assets/noise.png')] before:opacity-40">
+        <header className="sticky top-0 z-20 backdrop-blur-md bg-white/30 border-b border-white/40 supports-backdrop-blur:bg-white/30 px-4 py-3 shadow-glass">
           <div className="container mx-auto">
             <Link
               href="/"

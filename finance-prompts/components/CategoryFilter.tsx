@@ -28,10 +28,10 @@ export function CategoryFilter({ categories }: CategoryFilterProps) {
           key={cat}
           onClick={() => toggle(cat)}
           className={cn(
-            'rounded border px-3 py-1 text-sm capitalize transition-colors',
+            'rounded-full px-3 py-1 text-xs capitalize shadow-glass backdrop-blur-sm border border-white/30 transition-all',
             selected.has(cat)
-              ? 'bg-accent text-white'
-              : 'hover:bg-accent hover:text-white'
+              ? 'bg-accent/90 text-white'
+              : 'bg-white/10 hover:bg-white/20'
           )}
         >
           {cat}

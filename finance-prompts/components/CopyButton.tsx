@@ -21,10 +21,10 @@ export function CopyButton({ value }: CopyButtonProps) {
       aria-label="Copy prompt to clipboard"
       onClick={handleClick}
       className={cn(
-        'inline-flex items-center gap-1 rounded border px-3 py-1 text-sm transition-colors focus-visible:outline-accent',
+        'inline-flex items-center gap-1 rounded-md px-3 py-1 text-sm font-medium transition-all shadow-glass border border-white/30 backdrop-blur-sm',
         copied
           ? 'bg-accent text-white'
-          : 'hover:bg-accent hover:text-white'
+          : 'bg-white/10 hover:bg-white/20 active:scale-[.97]'
       )}
     >
       {copied ? <Check size={16} /> : <Copy size={16} />}
