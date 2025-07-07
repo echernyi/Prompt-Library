@@ -11,7 +11,10 @@ import { useMemo } from 'react';
 
 export default function HomePage() {
   const search = useSearchParams();
-  const selected = search.get('cat')?.split(',').filter(Boolean) ?? [];
+  const selected = useMemo(
+    () => search.get('cat')?.split(',').filter(Boolean) ?? [],
+    [search]
+  );
 
   const categories = getAllCategories();
   const prompts = useMemo(

@@ -1,5 +1,6 @@
 import '@/app/globals.css';
 import { Inter } from 'next/font/google';
+import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
@@ -15,12 +16,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="min-h-screen flex flex-col bg-white text-black antialiased">
         <header className="border-b px-4 py-3">
           <div className="container mx-auto">
-            <a
+            <Link
               href="/"
               className="text-lg font-semibold tracking-tight hover:text-accent"
             >
               Библиотека Промптов СФН
-            </a>
+            </Link>
           </div>
         </header>
 
