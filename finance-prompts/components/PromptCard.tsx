@@ -1,5 +1,6 @@
 import ReactMarkdown from 'react-markdown';
 import { CopyButton } from './CopyButton';
+import { CategoryPill } from './CategoryPill';
 import { Prompt } from '@/lib/prompts';
 
 interface PromptCardProps {
@@ -9,10 +10,15 @@ interface PromptCardProps {
 
 export function PromptCard({ prompt, showLogic = true }: PromptCardProps) {
   return (
-    <article className="grid gap-6 md:grid-cols-[1fr_minmax(240px,320px)] rounded-2xl bg-white/10 backdrop-blur-md border border-white/30 shadow-glass p-6">
+    <article className="grid gap-6 md:grid-cols-[1fr_minmax(260px,320px)] rounded-2xl bg-white/40 backdrop-blur-lg border border-white/60 shadow-xl p-6">
       {/* prompt text block */}
       <div className="space-y-2">
-        <h2 className="text-xl font-medium">{prompt.title}</h2>
+        <h2 className="text-xl font-semibold">{prompt.title}</h2>
+        <div className="flex flex-wrap gap-2">
+          {prompt.categories.map((cat) => (
+            <CategoryPill key={cat} name={cat} />
+          ))}
+        </div>
         <pre className="whitespace-pre-wrap rounded-lg bg-white/20 p-4 text-sm leading-relaxed shadow-inner">
 {prompt.text}
         </pre>

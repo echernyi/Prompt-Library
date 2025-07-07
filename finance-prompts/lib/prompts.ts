@@ -19,3 +19,11 @@ export function getPromptsByCategories(cats: string[]): Prompt[] {
     cats.some((c) => p.categories.includes(c))
   );
 }
+
+export function getPromptById(id: string): Prompt | undefined {
+  return prompts.find((p) => p.id === id);
+}
+
+export function getAllPromptIds(): string[] {
+  return prompts.map((p) => p.id);
+}
