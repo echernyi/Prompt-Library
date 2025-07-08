@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BookOpen, Brain, MessageCircle, ArrowRight, Sparkles, Users } from 'lucide-react';
+import { BookOpen, Brain, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function HomePage() {
   return (
