@@ -107,20 +107,6 @@ export default function HomePage() {
           </div>
         </a>
       </div>
-
-      {/* Community Section */}
-      <div className="text-center space-y-6">
-        <div className="flex justify-center">
-          <Users className="h-12 w-12 text-accent" />
-        </div>
-        <h2 className="text-2xl font-bold text-gray-900">
-          Присоединяйтесь к сообществу
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Станьте частью растущего сообщества финансовых профессионалов, 
-          использующих ИИ для повышения эффективности работы.
-        </p>
-      </div>
     </div>
   );
 }
