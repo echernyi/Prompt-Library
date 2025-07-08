@@ -7,26 +7,30 @@ const TAG_DESCRIPTIONS = {
   '[CONTEXT]': 'Provides background information and scenario details',
   '[TASKS]': 'Lists specific actions or steps to be performed',
   '[FORMAT]': 'Specifies the desired output structure and format',
-  '[CONSTRAINTS]': 'Defines limitations, requirements, and boundaries'
+  '[CONSTRAINTS]': 'Defines limitations, requirements, and boundaries',
+  '[РОЛЬ]': 'Определяет экспертизу и роль ассистента',
+  '[ЦЕЛЬ]': 'Формулирует основную задачу анализа',
+  '[КОНТЕКСТ]': 'Задает бизнес-сценарий и исходные условия',
+  '[ЗАДАЧИ]': 'Перечисляет ключевые задачи и этапы анализа',
+  '[ФОРМАТ]': 'Определяет структуру и формат результата',
+  '[ОГРАНИЧЕНИЯ]': 'Описывает ограничения, требования и условия'
 };
 
 export function highlightTags(text: string): React.ReactNode[] {
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
   
-  // Find all tag matches
-  const tagRegex = /\[(ROLE|GOAL|CONTEXT|TASKS|FORMAT|CONSTRAINTS)\]/g;
+  // Find all tag matches (English and Russian)
+  const tagRegex = /\[(ROLE|GOAL|CONTEXT|TASKS|FORMAT|CONSTRAINTS|РОЛЬ|ЦЕЛЬ|КОНТЕКСТ|ЗАДАЧИ|ФОРМАТ|ОГРАНИЧЕНИЯ)\]/g;
   let match;
   
   while ((match = tagRegex.exec(text)) !== null) {
     const fullTag = match[0];
     const tagKey = fullTag as keyof typeof TAG_DESCRIPTIONS;
-    
     // Add text before the tag
     if (match.index > lastIndex) {
       parts.push(text.slice(lastIndex, match.index));
     }
-    
     // Add the tagged pill
     parts.push(
       <TagTooltip
@@ -38,14 +42,11 @@ export function highlightTags(text: string): React.ReactNode[] {
         </span>
       </TagTooltip>
     );
-    
     lastIndex = match.index + fullTag.length;
   }
-  
   // Add remaining text
   if (lastIndex < text.length) {
     parts.push(text.slice(lastIndex));
   }
-  
   return parts.length > 0 ? parts : [text];
 }

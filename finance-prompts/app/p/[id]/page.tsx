@@ -46,6 +46,18 @@ export default async function PromptPage({
             Структура промпта
           </h2>
           <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+            {/* 1. What structure is used (pills) */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {['роль', 'цель', 'контекст', 'задачи', 'формат', 'ограничения'].map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-accent text-white shadow-glass"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+            {/* 2. Structure explained (with highlighted tags) */}
             <div className="space-y-4">
               {highlightTags(prompt.logic)}
             </div>
