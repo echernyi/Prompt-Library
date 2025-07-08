@@ -37,7 +37,11 @@ export function CategoryFilter({ categories, onClearAll, refreshKey }: CategoryF
   }
 
   function clearAllFilters() {
-    router.replace('');
+    if (typeof window !== 'undefined') {
+      router.replace(window.location.pathname);
+    } else {
+      router.replace('');
+    }
     setSelected(new Set());
     if (onClearAll) onClearAll();
   }
