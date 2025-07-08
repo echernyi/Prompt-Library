@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Search, AlertCircle } from 'lucide-react';
 import { getPromptsByCategories, type Prompt } from '@/lib/prompts';
@@ -25,12 +25,13 @@ export default function FilterablePrompts({ categories }: FilterablePromptsProps
 
   const hasNoFilters = selected.length === 0;
   const hasNoResults = selected.length > 0 && prompts.length === 0;
+  const [refreshKey, setRefreshKey] = useState(0);
 
   return (
     <div className="space-y-8">
       {/* Filter Section */}
       <section aria-labelledby="filters-heading">
-        <CategoryFilter categories={categories} />
+        <CategoryFilter key={refreshKey} categories={categories} onClearAll={() => setRefreshKey(k => k + 1)} />
       </section>
       
       {/* Results Section */}
@@ -43,7 +44,7 @@ export default function FilterablePrompts({ categories }: FilterablePromptsProps
             </h2>
             <div className="flex items-center gap-2 text-sm text-gray-500">
               <Search className="h-4 w-4" />
-              <span>{prompts.length} промпт{prompts.length === 1 ? '' : prompts.length > 4 ? 'ов' : 'а'}</span>
+              <span>{prompts.length} промпт{prompts.length === 1 ? '' : prompts.length > 4 ? 'ов' : prompts.length > 1 ? 'а' : ''}</span>
             </div>
           </div>
 
@@ -84,7 +85,7 @@ export default function FilterablePrompts({ categories }: FilterablePromptsProps
 
           {/* Results Grid */}
           {prompts.length > 0 && (
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div key={refreshKey} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {prompts.map((p: Prompt) => (
                 <PromptPreview key={p.id} prompt={p} />
               ))}

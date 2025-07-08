@@ -6,9 +6,10 @@ import { cn } from '@/lib/utils';
 
 interface CategoryFilterProps {
   categories: string[];
+  onClearAll?: () => void;
 }
 
-export function CategoryFilter({ categories }: CategoryFilterProps) {
+export function CategoryFilter({ categories, onClearAll }: CategoryFilterProps) {
   const router = useRouter();
   const search = useSearchParams();
   const selected = new Set(
@@ -25,6 +26,7 @@ export function CategoryFilter({ categories }: CategoryFilterProps) {
 
   function clearAllFilters() {
     router.replace('');
+    if (onClearAll) onClearAll();
   }
 
   return (
