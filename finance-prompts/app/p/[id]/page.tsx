@@ -46,21 +46,23 @@ export default async function PromptPage({
             Структура промпта
           </h2>
           <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
-            {/* 1. What structure is used (pills) */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              {['роль', 'цель', 'контекст', 'задачи', 'формат', 'ограничения'].map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-accent text-white shadow-glass"
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-            {/* 2. Structure explained (with highlighted tags) */}
-            <div className="space-y-4">
-              {highlightTags(prompt.logic)}
-            </div>
+            {prompt.logic.split(/\n\n+/).map((para, idx) => {
+              // If paragraph starts with #ТЕГ, render the tag as a blue pill and the rest as text
+              const hashtagMatch = para.match(/^#([А-ЯA-Z]+)/i);
+              if (hashtagMatch) {
+                const tag = hashtagMatch[1];
+                const rest = para.replace(/^#[^ ]+\s*/, '');
+                return (
+                  <p key={idx} className="flex items-start gap-2">
+                    <span className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-accent text-white shadow-glass mt-1">
+                      #{tag.toLowerCase()}
+                    </span>
+                    <span>{rest}</span>
+                  </p>
+                );
+              }
+              return <p key={idx}>{para}</p>;
+            })}
           </div>
         </div>
       </div>
