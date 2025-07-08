@@ -6,12 +6,8 @@ export default function HomePage() {
     <div className="space-y-16">
       {/* Hero Section */}
       <div className="text-center space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-          Библиотека Промптов СФН
-        </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Готовые финансовые промпты для работы с ИИ, персональный помощник для создания промптов 
-          и возможность предложить свои идеи сообществу.
+          Готовые промпты для эффективной работы с ИИ
         </p>
       </div>
 
@@ -38,21 +34,6 @@ export default function HomePage() {
                 </p>
               </div>
               
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span>Фильтрация по категориям</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span>Готовые к копированию</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  <span>Риск, отчетность, оценка</span>
-                </div>
-              </div>
-              
               <div className="flex items-center justify-center gap-2 text-blue-600 font-medium group-hover:text-blue-700">
                 <span>Открыть библиотеку</span>
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -74,27 +55,12 @@ export default function HomePage() {
               
               <div className="text-center space-y-3">
                 <h2 className="text-2xl font-bold text-gray-900">
-                  ИИ Помощник
+                  Prompt Builder
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
                   Умный помощник для создания персонализированных промптов. 
                   Опишите задачу, и ИИ поможет создать идеальный промпт.
                 </p>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span>Персонализация под задачу</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span>Анализ и оптимизация</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                  <span>Скоро запуск!</span>
-                </div>
               </div>
               
               <div className="flex items-center justify-center gap-2 text-purple-600 font-medium group-hover:text-purple-700">
@@ -130,24 +96,8 @@ export default function HomePage() {
                   Предложить Промпт
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Есть идея для нового промпта? Поделитесь с сообществом! 
-                  Напишите нам в Telegram и помогите развивать библиотеку.
+                  Есть илеи для нового промпта ? Поделитесь и мы его добавим.
                 </p>
-              </div>
-              
-              <div className="space-y-3">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span>Прямая связь с разработчиками</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span>Быстрая обратная связь</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  <span>Участие в развитии</span>
-                </div>
               </div>
               
               <div className="flex items-center justify-center gap-2 text-green-600 font-medium group-hover:text-green-700">
