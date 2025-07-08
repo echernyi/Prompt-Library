@@ -55,12 +55,8 @@ export default function FilterablePrompts({ categories }: FilterablePromptsProps
                   <Search className="h-5 w-5 text-blue-600 mt-0.5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-blue-900 mb-1">
-                    Начните с выбора фильтров
-                  </h3>
                   <p className="text-sm text-blue-700">
-                    Используйте фильтры выше, чтобы найти промпты для конкретных финансовых задач. 
-                    Вы можете выбрать несколько категорий одновременно.
+                    Выберите категорию, чтобы найти промпт под Вашу задачу
                   </p>
                 </div>
               </div>
