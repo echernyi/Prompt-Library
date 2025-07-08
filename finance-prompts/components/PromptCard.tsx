@@ -22,13 +22,13 @@ export function PromptCard({ prompt, showLogic = true }: PromptCardProps) {
         <pre className="whitespace-pre-wrap rounded-lg bg-white/20 p-4 text-sm leading-relaxed shadow-inner">
 {prompt.text}
         </pre>
-        <CopyButton value={prompt.text} />
+        <CopyButton value={prompt.text} buttonText="Скопировать" />
       </div>
 
       {/* always-visible logic panel (per your spec) */}
       {showLogic && (
-        <div className="prose prose-sm max-w-none md:border-l md:border-white/30 md:pl-6">
-          <h3 className="m-0 text-base font-semibold">Prompt Logic</h3>
+        <div className="prose prose-sm max-w-none md:border-l-2 md:border-blue-200 md:pl-6 bg-blue-50/40 rounded-xl p-4">
+          <h3 className="m-0 text-base font-semibold">Логика промпта</h3>
           <ReactMarkdown>{prompt.logic}</ReactMarkdown>
         </div>
       )}

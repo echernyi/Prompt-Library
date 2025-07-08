@@ -15,9 +15,9 @@ export default function HomePage() {
       <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3 max-w-6xl mx-auto">
         
         {/* 1. Prompt Library */}
-        <Link href="/library" className="group block">
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/70">
-            <div className="space-y-6">
+        <Link href="/library" className="group block h-full">
+          <div className="h-full flex flex-col justify-between bg-white/60 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/70">
+            <div className="space-y-6 flex-1 flex flex-col justify-between">
               <div className="flex justify-center">
                 <div className="bg-blue-100 rounded-full p-4 group-hover:bg-blue-200 transition-colors">
                   <BookOpen className="h-8 w-8 text-blue-600" />
@@ -29,8 +29,7 @@ export default function HomePage() {
                   Библиотека Промптов
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Готовые к использованию финансовые промпты для различных задач. 
-                  Используйте фильтры для быстрого поиска нужного решения.
+                  Готовые к использованию промпты для различных задач. Используйте фильтры для быстрого поиска нужного решения.
                 </p>
               </div>
               
@@ -43,9 +42,9 @@ export default function HomePage() {
         </Link>
 
         {/* 2. AI Prompt Helper */}
-        <Link href="/prompt-helper" className="group block">
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/70 relative overflow-hidden">
-            <div className="space-y-6">
+        <Link href="/prompt-helper" className="group block h-full">
+          <div className="h-full flex flex-col justify-between bg-white/60 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/70 relative overflow-hidden">
+            <div className="space-y-6 flex-1 flex flex-col justify-between">
               <div className="flex justify-center">
                 <div className="bg-purple-100 rounded-full p-4 group-hover:bg-purple-200 transition-colors relative">
                   <Brain className="h-8 w-8 text-purple-600" />
@@ -81,10 +80,10 @@ export default function HomePage() {
           href="https://t.me/egorchernyi" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="group block"
+          className="group block h-full"
         >
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/70">
-            <div className="space-y-6">
+          <div className="h-full flex flex-col justify-between bg-white/60 backdrop-blur-sm rounded-3xl border border-white/60 shadow-xl p-8 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-white/70">
+            <div className="space-y-6 flex-1 flex flex-col justify-between">
               <div className="flex justify-center">
                 <div className="bg-green-100 rounded-full p-4 group-hover:bg-green-200 transition-colors">
                   <MessageCircle className="h-8 w-8 text-green-600" />
@@ -96,7 +95,7 @@ export default function HomePage() {
                   Предложить Промпт
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Есть илеи для нового промпта ? Поделитесь и мы его добавим.
+                  Есть идеи для нового промпта? Поделитесь и мы его добавим.
                 </p>
               </div>
               

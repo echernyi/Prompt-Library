@@ -6,8 +6,9 @@ import { cn } from '@/lib/utils';             // created by shadcn init
 
 interface CopyButtonProps {
   value: string;
+  buttonText?: string;
 }
-export function CopyButton({ value }: CopyButtonProps) {
+export function CopyButton({ value, buttonText = 'Copy' }: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
 
   async function handleClick() {
@@ -28,7 +29,7 @@ export function CopyButton({ value }: CopyButtonProps) {
       )}
     >
       {copied ? <Check size={16} /> : <Copy size={16} />}
-      {copied ? 'Copied' : 'Copy'}
+      {buttonText}
     </button>
   );
 }
