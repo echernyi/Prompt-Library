@@ -37,16 +37,13 @@ export default async function PromptPage({
 
         {/* Editable Prompt */}
         <div className="rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 shadow-2xl p-6 md:p-8">
-          <h2 className="text-xl font-semibold mb-6 text-gray-900">
-            Editable Prompt
-          </h2>
           <EditablePrompt initialValue={prompt.text} />
         </div>
 
         {/* Prompt Structure Explained */}
         <div className="rounded-3xl bg-white/60 backdrop-blur-xl border border-white/60 shadow-2xl p-6 md:p-8">
           <h2 className="text-xl font-semibold mb-6 text-gray-900">
-            Prompt Structure Explained
+            Структура промпта
           </h2>
           <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
             <div className="space-y-4">
