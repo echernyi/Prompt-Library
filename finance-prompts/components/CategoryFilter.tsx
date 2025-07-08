@@ -28,7 +28,7 @@ export function CategoryFilter({ categories }: CategoryFilterProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="bg-white/50 backdrop-blur-sm rounded-2xl border border-white/60 shadow-lg p-6 space-y-4">
       {/* Header Section */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -38,7 +38,7 @@ export function CategoryFilter({ categories }: CategoryFilterProps) {
         {selected.size > 0 && (
           <button
             onClick={clearAllFilters}
-            className="flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700 transition-colors"
+            className="flex items-center gap-1 text-xs text-gray-500 hover:text-red-600 transition-colors px-2 py-1 rounded-lg hover:bg-red-50"
           >
             <X className="h-3 w-3" />
             Очистить всё
