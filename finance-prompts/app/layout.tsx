@@ -20,9 +20,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             {/* Logo/Title */}
             <Link
               href="/"
-              className="text-lg font-semibold tracking-tight hover:text-accent transition-colors"
+              className="text-lg font-semibold tracking-tight hover:text-accent transition-colors flex items-center gap-1"
             >
-              Библиотека Промптов СФН
+              <span className="text-accent">[</span>
+              <span className="text-gray-500">sfn</span>
+              <span className="text-black">prompt.ru</span>
+              <span className="text-accent">]</span>
             </Link>
             
             {/* Navigation Menu */}
