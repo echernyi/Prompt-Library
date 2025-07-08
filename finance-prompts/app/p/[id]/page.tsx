@@ -5,7 +5,6 @@ import {
 } from '@/lib/prompts';
 import { EditablePrompt } from '@/components/EditablePrompt';
 import { CategoryPill } from '@/components/CategoryPill';
-import { highlightTags } from '@/lib/highlight';
 
 export async function generateStaticParams() {
   return getAllPromptIds().map((id) => ({ id }));
