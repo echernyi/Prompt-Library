@@ -31,7 +31,7 @@ export default function FilterablePrompts({ categories }: FilterablePromptsProps
     <div className="space-y-8">
       {/* Filter Section */}
       <section aria-labelledby="filters-heading">
-        <CategoryFilter key={refreshKey} categories={categories} onClearAll={() => setRefreshKey(k => k + 1)} />
+        <CategoryFilter key={refreshKey} categories={categories} onClearAll={() => setRefreshKey(k => k + 1)} refreshKey={refreshKey} />
       </section>
       
       {/* Results Section */}

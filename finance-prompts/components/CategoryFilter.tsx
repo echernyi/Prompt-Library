@@ -3,29 +3,42 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Filter, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useState, useEffect } from 'react';
 
 interface CategoryFilterProps {
   categories: string[];
   onClearAll?: () => void;
+  refreshKey?: number;
 }
 
-export function CategoryFilter({ categories, onClearAll }: CategoryFilterProps) {
+export function CategoryFilter({ categories, onClearAll, refreshKey }: CategoryFilterProps) {
   const router = useRouter();
   const search = useSearchParams();
-  const selected = new Set(
-    search.get('cat')?.split(',').filter(Boolean) ?? []
+  const [selected, setSelected] = useState<Set<string>>(() =>
+    new Set(search.get('cat')?.split(',').filter(Boolean) ?? [])
   );
 
-  function toggle(cat: string) {
-    if (selected.has(cat)) selected.delete(cat);
-    else selected.add(cat);
+  // Сброс selected при изменении refreshKey
+  useEffect(() => {
+    setSelected(new Set());
+  }, [refreshKey]);
 
-    const next = Array.from(selected).join(',');
+  useEffect(() => {
+    setSelected(new Set(search.get('cat')?.split(',').filter(Boolean) ?? []));
+  }, [search]);
+
+  function toggle(cat: string) {
+    const nextSelected = new Set(selected);
+    if (nextSelected.has(cat)) nextSelected.delete(cat);
+    else nextSelected.add(cat);
+    setSelected(nextSelected);
+    const next = Array.from(nextSelected).join(',');
     router.replace(next ? `?cat=${next}` : '');
   }
 
   function clearAllFilters() {
     router.replace('');
+    setSelected(new Set());
     if (onClearAll) onClearAll();
   }
 
@@ -43,7 +56,7 @@ export function CategoryFilter({ categories, onClearAll }: CategoryFilterProps) 
             className="flex items-center gap-1 text-xs text-gray-500 hover:text-red-600 transition-colors px-2 py-1 rounded-lg hover:bg-red-50"
           >
             <X className="h-3 w-3" />
-            Очистить всё
+            {'Очистить всё'}
           </button>
         )}
       </div>
